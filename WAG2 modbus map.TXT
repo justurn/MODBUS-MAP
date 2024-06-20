@@ -1,7 +1,7 @@
                               Modbus Register Map
-                             Software Version:  6.8
+                             Software Version:  6.6
 
-Rack Type: Standard   Rack Address: 1     Date: 03-Oct-2023     Time: 07:26:37
+Rack Type: Standard   Rack Address: 1     Date: 20-May-2024     Time: 14:30:41
 
  Note: The second column of Registers are repeated values of the first column.
 -------------------------------------------------------------------------------
@@ -158,9 +158,38 @@ Current Proportional Values:
       Channel2 : XN25-HP Rotor Speed  : rpm                            30566  41566
 
 
-                              Lower Slot 4: Empty
+                       Lower Slot 4: /25 Keyphasor Module
+
+                                                                 Modbus Register
+Module Status:                                                          42002
+   Not OK                                                           10030 (bit 13)
+Channel Status:
+   Channel1: Gen Kph                                                    42047
+      Channel Not OK                                             10741 (bit 0)
+      Reserved (None)                                            10742 (bit 1)
+      Reserved (None)                                            10743 (bit 2)
+      Channel in Bypass Mode                                     10744 (bit 3)
+      Channel Off                                                10745 (bit 4)
+      Reserved (None)                                            10746 (bit 5)
+      Reserved (None)                                            10747 (bit 6)
+      Channel Not Monitoring                                     10748 (bit 7)
+
+   Channel2:                                                            42047
+      Channel Not OK                                             10749 (bit 8)
+      Reserved (None)                                            10750 (bit 9)
+      Reserved (None)                                            10751 (bit 10)
+      Channel in Bypass Mode                                     10752 (bit 11)
+      Channel Off                                                10753 (bit 12)
+      Reserved (None)                                            10754 (bit 13)
+      Reserved (None)                                            10755 (bit 14)
+      Channel Not Monitoring                                     10756 (bit 15)
+
 Primary Values:
    None Configured
+
+Current Proportional Values:
+      Channel1 : Gen Kph              : rpm                            30581  41581
+      Channel2 :                      : rpm                            30582  41582
 -------------------------------------------------------------------------------
                         Slot 5: /40M Proximitor Monitor
 
@@ -263,7 +292,7 @@ Module Status:                                                          42003
    Danger/Alarm 2                                                10038 (bit 5)
    Not OK                                                        10039 (bit 6)
 Channel Status:
-   Channel1: Gearbox Extension En                                       42071
+   Channel1: GB Ext End Vel                                             42071
       Channel Not OK                                             11125 (bit 0)
       Channel Alert/Alarm 1                                      11126 (bit 1)
       Channel Danger/Alarm 2                                     11127 (bit 2)
@@ -273,7 +302,7 @@ Channel Status:
       Channel Special Alarm Inhibit                              11131 (bit 6)
       Channel Not Monitoring                                     11132 (bit 7)
 
-   Channel2: Gearbox Blind End                                          42071
+   Channel2: GB Ext End Acc                                             42071
       Channel Not OK                                             11133 (bit 8)
       Channel Alert/Alarm 1                                      11134 (bit 9)
       Channel Danger/Alarm 2                                     11135 (bit 10)
@@ -283,7 +312,7 @@ Channel Status:
       Channel Special Alarm Inhibit                              11139 (bit 14)
       Channel Not Monitoring                                     11140 (bit 15)
 
-   Channel3:                                                            42072
+   Channel3: GB Bl End Vel                                              42072
       Channel Not OK                                             11141 (bit 0)
       Channel Alert/Alarm 1                                      11142 (bit 1)
       Channel Danger/Alarm 2                                     11143 (bit 2)
@@ -293,7 +322,7 @@ Channel Status:
       Channel Special Alarm Inhibit                              11147 (bit 6)
       Channel Not Monitoring                                     11148 (bit 7)
 
-   Channel4:                                                            42072
+   Channel4: GB Bl End Acc                                              42072
       Channel Not OK                                             11149 (bit 8)
       Channel Alert/Alarm 1                                      11150 (bit 9)
       Channel Danger/Alarm 2                                     11151 (bit 10)
@@ -307,31 +336,37 @@ Primary Values:
    None Configured
 
 Current Proportional Values:
-   Channel1: Gearbox Extension En : Acceleration
+   Channel1: GB Ext End Vel       : Acceleration 2
       Direct Amplitude                                                 30629  41629
+      Bias Voltage                                                     30630  41630
+      1X Amplitude                                                     30631  41631
+      1X Phase Lag                                                     30632  41632
+      2X Amplitude                                                     30633  41633
+      2X Phase Lag                                                     30634  41634
 
-   Channel2: Gearbox Blind End    : Acceleration
-      Direct Amplitude                                                 30630  41630
+   Channel2: GB Ext End Acc       : Acceleration 2
+      Direct Amplitude                                                 30635  41635
+      Bias Voltage                                                     30636  41636
+      1X Amplitude                                                     30637  41637
+      1X Phase Lag                                                     30638  41638
+      2X Amplitude                                                     30639  41639
+      2X Phase Lag                                                     30640  41640
 
-   Channel3:                      : Radial Vibration
-      Direct Amplitude                                                 30631  41631
-      Gap                                                              30632  41632
-      1X Amplitude                                                     30633  41633
-      1X Phase Lag                                                     30634  41634
-      2X Amplitude                                                     30635  41635
-      2X Phase Lag                                                     30636  41636
-      Not 1X Amplitude                                                 30637  41637
-      Smax Amplitude                                                   30638  41638
+   Channel3: GB Bl End Vel        : Acceleration 2
+      Direct Amplitude                                                 30641  41641
+      Bias Voltage                                                     30642  41642
+      1X Amplitude                                                     30643  41643
+      1X Phase Lag                                                     30644  41644
+      2X Amplitude                                                     30645  41645
+      2X Phase Lag                                                     30646  41646
 
-   Channel4:                      : Radial Vibration
-      Direct Amplitude                                                 30639  41639
-      Gap                                                              30640  41640
-      1X Amplitude                                                     30641  41641
-      1X Phase Lag                                                     30642  41642
-      2X Amplitude                                                     30643  41643
-      2X Phase Lag                                                     30644  41644
-      Not 1X Amplitude                                                 30645  41645
-      Smax Amplitude                                                   30646  41646
+   Channel4: GB Bl End Acc        : Acceleration 2
+      Direct Amplitude                                                 30647  41647
+      Bias Voltage                                                     30648  41648
+      1X Amplitude                                                     30649  41649
+      1X Phase Lag                                                     30650  41650
+      2X Amplitude                                                     30651  41651
+      2X Phase Lag                                                     30652  41652
 
 -------------------------------------------------------------------------------
                        Slot 7: /32 Standard Relay Module
@@ -1015,10 +1050,88 @@ Slot 5 (3500/40) -- Channel 4: Gen NDE Y Vib       : Radial Vibration
       Setpoints -- Alert Over Direct                                45048
 Slot 5 (3500/40) -- Channel 4: Gen NDE Y Vib       : Radial Vibration
       Setpoints -- Danger Over Direct                               45049
-Slot 11: Channel Status -- Monitor Not Functioning                  45050
-Slot 11: Channel Status -- Monitor Not Functioning                  45051
+Slot 4 (3500/25)(Lower Slot) -- Channel 1
+      Current Proportional Values: Kph Ppl                          45058
+Slot 4 (3500/25)(Lower Slot) -- Channel 2
+      Current Proportional Values: Kph Ppl                          45059
+Slot 6 (3500/42) -- Channel 1: GB Ext End Vel      : Acceleration 2
+      Current Proportional Values: Direct                           45060
+Slot 6 (3500/42) -- Channel 2: GB Ext End Acc      : Acceleration 2
+      Current Proportional Values: Direct                           45061
+Slot 6 (3500/42) -- Channel 3: GB Bl End Vel       : Acceleration 2
+      Current Proportional Values: Direct                           45062
+Slot 6 (3500/42) -- Channel 4: GB Bl End Acc       : Acceleration 2
+      Current Proportional Values: Direct                           45063
+Slot 6 (3500/42) -- Channel 1: GB Ext End Vel      : Acceleration 2
+      Setpoints -- Alert Over Direct                                45064
+Slot 6 (3500/42) -- Channel 2: GB Ext End Acc      : Acceleration 2
+      Setpoints -- Alert Over Direct                                45065
+Slot 6 (3500/42) -- Channel 3: GB Bl End Vel       : Acceleration 2
+      Setpoints -- Alert Over Direct                                45066
+Slot 6 (3500/42) -- Channel 4: GB Bl End Acc       : Acceleration 2
+      Setpoints -- Alert Over Direct                                45067
+Slot 6 (3500/42) -- Channel 1: GB Ext End Vel      : Acceleration 2
+      Setpoints -- Danger Over Direct                               45068
+Slot 6 (3500/42) -- Channel 2: GB Ext End Acc      : Acceleration 2
+      Setpoints -- Danger Over Direct                               45069
+Slot 6 (3500/42) -- Channel 3: GB Bl End Vel       : Acceleration 2
+      Setpoints -- Danger Over Direct                               45070
+Slot 6 (3500/42) -- Channel 4: GB Bl End Acc       : Acceleration 2
+      Setpoints -- Danger Over Direct                               45071
+Slot 9 (3500/50) -- Channel 1: Gen DE Keyphasor    : Rotor Speed
+      Setpoints -- Alert Over Speed                                 45072
+Slot 9 (3500/50) -- Channel 1: Gen DE Keyphasor    : Rotor Speed
+      Setpoints -- Danger Over Speed                                45073
+Slot 9 (3500/50) -- Channel 2:                     : Rotor Speed
+      Setpoints -- Danger Over Speed                                45075
+Slot 9 (3500/50) -- Channel 2:                     : Rotor Speed
+      Setpoints -- Alert Over Speed                                 45076
+Slot 9 (3500/50) -- Channel 2:                     : Rotor Speed
+      Setpoints -- Alert Under Speed                                45077
+Slot 9 (3500/50) -- Channel 2:                     : Rotor Speed
+      Setpoints -- Alert Over Speed Bnd                             45078
+Slot 9 (3500/50) -- Channel 2:                     : Rotor Speed
+      Setpoints -- Alert Under Speed Bnd                            45079
+Slot 4 (3500/25)(Lower Slot) -- Channel Status:
+   Channel 1: Gen Kph                                               45090
+      Channel Not OK                                                (bit 0)
+      Reserved (None)                                               (bit 1)
+      Reserved (None)                                               (bit 2)
+      Channel in Bypass Mode                                        (bit 3)
+      Channel Off                                                   (bit 4)
+      Reserved (None)                                               (bit 5)
+      Reserved (None)                                               (bit 6)
+      Reserved (None)                                               (bit 7)
+      Channel Not Monitoring                                        (bit 8)
+      KPH Not OK                                                    (bit 9)
+      Signal Path Not OK                                            (bit 10)
+      Reserved (None)                                               (bit 11)
+      Reserved (None)                                               (bit 12)
+      Reserved (None)                                               (bit 13)
+      Reserved (None)                                               (bit 14)
+      Reserved (None)                                               (bit 15)
+
+Slot 4 (3500/25)(Lower Slot) -- Channel Status:
+   Channel 2:                                                       45091
+      Channel Not OK                                                (bit 0)
+      Reserved (None)                                               (bit 1)
+      Reserved (None)                                               (bit 2)
+      Channel in Bypass Mode                                        (bit 3)
+      Channel Off                                                   (bit 4)
+      Reserved (None)                                               (bit 5)
+      Reserved (None)                                               (bit 6)
+      Reserved (None)                                               (bit 7)
+      Channel Not Monitoring                                        (bit 8)
+      KPH Not OK                                                    (bit 9)
+      Signal Path Not OK                                            (bit 10)
+      Reserved (None)                                               (bit 11)
+      Reserved (None)                                               (bit 12)
+      Reserved (None)                                               (bit 13)
+      Reserved (None)                                               (bit 14)
+      Reserved (None)                                               (bit 15)
+
 Slot 6 (3500/42) -- Channel Status:
-   Channel 1: Gearbox Extension En: Acceleration                    45052
+   Channel 1: GB Ext End Vel: Acceleration 2                        45092
       Channel Not OK                                                (bit 0)
       Channel Alert/Alarm 1                                         (bit 1)
       Channel Danger/Alarm 2                                        (bit 2)
@@ -1037,7 +1150,7 @@ Slot 6 (3500/42) -- Channel Status:
       Reserved (None)                                               (bit 15)
 
 Slot 6 (3500/42) -- Channel Status:
-   Channel 2: Gearbox Blind End: Acceleration                       45053
+   Channel 2: GB Ext End Acc: Acceleration 2                        45093
       Channel Not OK                                                (bit 0)
       Channel Alert/Alarm 1                                         (bit 1)
       Channel Danger/Alarm 2                                        (bit 2)
@@ -1055,18 +1168,196 @@ Slot 6 (3500/42) -- Channel Status:
       Reserved (None)                                               (bit 14)
       Reserved (None)                                               (bit 15)
 
-Slot 6 (3500/42) -- Channel 1: Gearbox Extension En: Acceleration
-      Current Proportional Values: Direct                           45054
-Slot 6 (3500/42) -- Channel 2: Gearbox Blind End   : Acceleration
-      Current Proportional Values: Direct                           45055
-Slot 6 (3500/42) -- Channel 1: Gearbox Extension En: Acceleration
-      Setpoints -- Alert Over Direct                                45056
-Slot 6 (3500/42) -- Channel 1: Gearbox Extension En: Acceleration
-      Setpoints -- Danger Over Direct                               45057
-Slot 6 (3500/42) -- Channel 2: Gearbox Blind End   : Acceleration
-      Setpoints -- Alert Over Direct                                45058
-Slot 6 (3500/42) -- Channel 2: Gearbox Blind End   : Acceleration
-      Setpoints -- Danger Over Direct                               45059
+Slot 6 (3500/42) -- Channel Status:
+   Channel 3: GB Bl End Vel: Acceleration 2                         45094
+      Channel Not OK                                                (bit 0)
+      Channel Alert/Alarm 1                                         (bit 1)
+      Channel Danger/Alarm 2                                        (bit 2)
+      Channel in Bypass Mode                                        (bit 3)
+      Channel Off                                                   (bit 4)
+      Channel Trip Multiply Mode                                    (bit 5)
+      Channel Special Alarm Inhibit                                 (bit 6)
+      Reserved (None)                                               (bit 7)
+      Channel Not Monitoring                                        (bit 8)
+      KPH Not OK                                                    (bit 9)
+      Signal Path Not OK                                            (bit 10)
+      Reserved (None)                                               (bit 11)
+      Reserved (None)                                               (bit 12)
+      Reserved (None)                                               (bit 13)
+      Reserved (None)                                               (bit 14)
+      Reserved (None)                                               (bit 15)
+
+Slot 6 (3500/42) -- Channel Status:
+   Channel 4: GB Bl End Acc: Acceleration 2                         45095
+      Channel Not OK                                                (bit 0)
+      Channel Alert/Alarm 1                                         (bit 1)
+      Channel Danger/Alarm 2                                        (bit 2)
+      Channel in Bypass Mode                                        (bit 3)
+      Channel Off                                                   (bit 4)
+      Channel Trip Multiply Mode                                    (bit 5)
+      Channel Special Alarm Inhibit                                 (bit 6)
+      Reserved (None)                                               (bit 7)
+      Channel Not Monitoring                                        (bit 8)
+      KPH Not OK                                                    (bit 9)
+      Signal Path Not OK                                            (bit 10)
+      Reserved (None)                                               (bit 11)
+      Reserved (None)                                               (bit 12)
+      Reserved (None)                                               (bit 13)
+      Reserved (None)                                               (bit 14)
+      Reserved (None)                                               (bit 15)
+
+Slot 7 (3500/32) -- Channel Status:
+   Channel 1:                                                       45096
+      Channel Not OK                                                (bit 0)
+      Relay Channel Active                                          (bit 1)
+      Reserved (None)                                               (bit 2)
+      Channel in Bypass Mode                                        (bit 3)
+      Channel Off                                                   (bit 4)
+      Reserved (None)                                               (bit 5)
+      Reserved (None)                                               (bit 6)
+      Reserved (None)                                               (bit 7)
+      Channel Not Monitoring                                        (bit 8)
+      KPH Not OK                                                    (bit 9)
+      Signal Path Not OK                                            (bit 10)
+      Reserved (None)                                               (bit 11)
+      Reserved (None)                                               (bit 12)
+      Reserved (None)                                               (bit 13)
+      Reserved (None)                                               (bit 14)
+      Reserved (None)                                               (bit 15)
+
+Slot 7 (3500/32) -- Channel Status:
+   Channel 2:                                                       45097
+      Channel Not OK                                                (bit 0)
+      Relay Channel Active                                          (bit 1)
+      Reserved (None)                                               (bit 2)
+      Channel in Bypass Mode                                        (bit 3)
+      Channel Off                                                   (bit 4)
+      Reserved (None)                                               (bit 5)
+      Reserved (None)                                               (bit 6)
+      Reserved (None)                                               (bit 7)
+      Channel Not Monitoring                                        (bit 8)
+      KPH Not OK                                                    (bit 9)
+      Signal Path Not OK                                            (bit 10)
+      Reserved (None)                                               (bit 11)
+      Reserved (None)                                               (bit 12)
+      Reserved (None)                                               (bit 13)
+      Reserved (None)                                               (bit 14)
+      Reserved (None)                                               (bit 15)
+
+Slot 9 (3500/50) -- Channel Status:
+   Channel 1: Gen DE Keyphasor: Rotor Speed                         45098
+      Channel Not OK                                                (bit 0)
+      Channel Alert/Alarm 1                                         (bit 1)
+      Channel Danger/Alarm 2                                        (bit 2)
+      Channel in Bypass Mode                                        (bit 3)
+      Channel Off                                                   (bit 4)
+      Reserved (None)                                               (bit 5)
+      Reserved (None)                                               (bit 6)
+      Reserved (None)                                               (bit 7)
+      Channel Not Monitoring                                        (bit 8)
+      KPH Not OK                                                    (bit 9)
+      Signal Path Not OK                                            (bit 10)
+      Reserved (None)                                               (bit 11)
+      Zero Speed Enabled/Disabled                                   (bit 12)
+      Reserved (None)                                               (bit 13)
+      Reserved (None)                                               (bit 14)
+      Reserved (None)                                               (bit 15)
+
+Slot 9 (3500/50) -- Channel Status:
+   Channel 2: : Rotor Speed                                         45099
+      Channel Not OK                                                (bit 0)
+      Channel Alert/Alarm 1                                         (bit 1)
+      Channel Danger/Alarm 2                                        (bit 2)
+      Channel in Bypass Mode                                        (bit 3)
+      Channel Off                                                   (bit 4)
+      Reserved (None)                                               (bit 5)
+      Reserved (None)                                               (bit 6)
+      Reserved (None)                                               (bit 7)
+      Channel Not Monitoring                                        (bit 8)
+      KPH Not OK                                                    (bit 9)
+      Signal Path Not OK                                            (bit 10)
+      Reserved (None)                                               (bit 11)
+      Zero Speed Enabled/Disabled                                   (bit 12)
+      Reserved (None)                                               (bit 13)
+      Reserved (None)                                               (bit 14)
+      Reserved (None)                                               (bit 15)
+
+Slot 10 (3500/42) -- Channel Status:
+   Channel 1: CRF Vib Acceleration: Acceleration                    45100
+      Channel Not OK                                                (bit 0)
+      Channel Alert/Alarm 1                                         (bit 1)
+      Channel Danger/Alarm 2                                        (bit 2)
+      Channel in Bypass Mode                                        (bit 3)
+      Channel Off                                                   (bit 4)
+      Channel Trip Multiply Mode                                    (bit 5)
+      Channel Special Alarm Inhibit                                 (bit 6)
+      Reserved (None)                                               (bit 7)
+      Channel Not Monitoring                                        (bit 8)
+      KPH Not OK                                                    (bit 9)
+      Signal Path Not OK                                            (bit 10)
+      Reserved (None)                                               (bit 11)
+      Reserved (None)                                               (bit 12)
+      Reserved (None)                                               (bit 13)
+      Reserved (None)                                               (bit 14)
+      Reserved (None)                                               (bit 15)
+
+Slot 10 (3500/42) -- Channel Status:
+   Channel 2: TRF Vib Acceleration: Acceleration                    45101
+      Channel Not OK                                                (bit 0)
+      Channel Alert/Alarm 1                                         (bit 1)
+      Channel Danger/Alarm 2                                        (bit 2)
+      Channel in Bypass Mode                                        (bit 3)
+      Channel Off                                                   (bit 4)
+      Channel Trip Multiply Mode                                    (bit 5)
+      Channel Special Alarm Inhibit                                 (bit 6)
+      Reserved (None)                                               (bit 7)
+      Channel Not Monitoring                                        (bit 8)
+      KPH Not OK                                                    (bit 9)
+      Signal Path Not OK                                            (bit 10)
+      Reserved (None)                                               (bit 11)
+      Reserved (None)                                               (bit 12)
+      Reserved (None)                                               (bit 13)
+      Reserved (None)                                               (bit 14)
+      Reserved (None)                                               (bit 15)
+
+Slot 10 (3500/42) -- Channel Status:
+   Channel 3: : Acceleration                                        45102
+      Channel Not OK                                                (bit 0)
+      Channel Alert/Alarm 1                                         (bit 1)
+      Channel Danger/Alarm 2                                        (bit 2)
+      Channel in Bypass Mode                                        (bit 3)
+      Channel Off                                                   (bit 4)
+      Channel Trip Multiply Mode                                    (bit 5)
+      Channel Special Alarm Inhibit                                 (bit 6)
+      Reserved (None)                                               (bit 7)
+      Channel Not Monitoring                                        (bit 8)
+      KPH Not OK                                                    (bit 9)
+      Signal Path Not OK                                            (bit 10)
+      Reserved (None)                                               (bit 11)
+      Reserved (None)                                               (bit 12)
+      Reserved (None)                                               (bit 13)
+      Reserved (None)                                               (bit 14)
+      Reserved (None)                                               (bit 15)
+
+Slot 10 (3500/42) -- Channel Status:
+   Channel 4: : Acceleration                                        45103
+      Channel Not OK                                                (bit 0)
+      Channel Alert/Alarm 1                                         (bit 1)
+      Channel Danger/Alarm 2                                        (bit 2)
+      Channel in Bypass Mode                                        (bit 3)
+      Channel Off                                                   (bit 4)
+      Channel Trip Multiply Mode                                    (bit 5)
+      Channel Special Alarm Inhibit                                 (bit 6)
+      Reserved (None)                                               (bit 7)
+      Channel Not Monitoring                                        (bit 8)
+      KPH Not OK                                                    (bit 9)
+      Signal Path Not OK                                            (bit 10)
+      Reserved (None)                                               (bit 11)
+      Reserved (None)                                               (bit 12)
+      Reserved (None)                                               (bit 13)
+      Reserved (None)                                               (bit 14)
+      Reserved (None)                                               (bit 15)
+
 
 
                                                                  Modbus Register
@@ -1386,10 +1677,88 @@ Slot 5 (3500/40) -- Channel 4: Gen NDE Y Vib       : Radial Vibration
        Setpoints -- Alert Over Direct                                46080
 Slot 5 (3500/40) -- Channel 4: Gen NDE Y Vib       : Radial Vibration
        Setpoints -- Danger Over Direct                               46082
-Slot 11: Channel Status -- Monitor Not Functioning                  46084
-Slot 11: Channel Status -- Monitor Not Functioning                  46085
+Slot 4 (3500/25)(Lower Slot) -- Channel 1
+       Current Proportional Values: Kph Ppl                         46092
+Slot 4 (3500/25)(Lower Slot) -- Channel 2
+       Current Proportional Values: Kph Ppl                         46094
+Slot 6 (3500/42) -- Channel 1: GB Ext End Vel      : Acceleration 2
+       Current Proportional Values: Direct                          46096
+Slot 6 (3500/42) -- Channel 2: GB Ext End Acc      : Acceleration 2
+       Current Proportional Values: Direct                          46098
+Slot 6 (3500/42) -- Channel 3: GB Bl End Vel       : Acceleration 2
+       Current Proportional Values: Direct                          46100
+Slot 6 (3500/42) -- Channel 4: GB Bl End Acc       : Acceleration 2
+       Current Proportional Values: Direct                          46102
+Slot 6 (3500/42) -- Channel 1: GB Ext End Vel      : Acceleration 2
+       Setpoints -- Alert Over Direct                                46104
+Slot 6 (3500/42) -- Channel 2: GB Ext End Acc      : Acceleration 2
+       Setpoints -- Alert Over Direct                                46106
+Slot 6 (3500/42) -- Channel 3: GB Bl End Vel       : Acceleration 2
+       Setpoints -- Alert Over Direct                                46108
+Slot 6 (3500/42) -- Channel 4: GB Bl End Acc       : Acceleration 2
+       Setpoints -- Alert Over Direct                                46110
+Slot 6 (3500/42) -- Channel 1: GB Ext End Vel      : Acceleration 2
+       Setpoints -- Danger Over Direct                               46112
+Slot 6 (3500/42) -- Channel 2: GB Ext End Acc      : Acceleration 2
+       Setpoints -- Danger Over Direct                               46114
+Slot 6 (3500/42) -- Channel 3: GB Bl End Vel       : Acceleration 2
+       Setpoints -- Danger Over Direct                               46116
+Slot 6 (3500/42) -- Channel 4: GB Bl End Acc       : Acceleration 2
+       Setpoints -- Danger Over Direct                               46118
+Slot 9 (3500/50) -- Channel 1: Gen DE Keyphasor    : Rotor Speed
+       Setpoints -- Alert Over Speed                                 46120
+Slot 9 (3500/50) -- Channel 1: Gen DE Keyphasor    : Rotor Speed
+       Setpoints -- Danger Over Speed                                46122
+Slot 9 (3500/50) -- Channel 2:                     : Rotor Speed
+       Setpoints -- Danger Over Speed                                46125
+Slot 9 (3500/50) -- Channel 2:                     : Rotor Speed
+       Setpoints -- Alert Over Speed                                 46127
+Slot 9 (3500/50) -- Channel 2:                     : Rotor Speed
+       Setpoints -- Alert Under Speed                                46129
+Slot 9 (3500/50) -- Channel 2:                     : Rotor Speed
+       Setpoints -- Alert Over Speed Bnd                             46131
+Slot 9 (3500/50) -- Channel 2:                     : Rotor Speed
+       Setpoints -- Alert Under Speed Bnd                            46133
+Slot 4 (3500/25)(Lower Slot) -- Channel Status:
+    Channel 1: Gen Kph                                              46145
+       Channel Not OK                                               (bit 0)
+       Reserved (None)                                              (bit 1)
+       Reserved (None)                                              (bit 2)
+       Channel in Bypass Mode                                       (bit 3)
+       Channel Off                                                  (bit 4)
+       Reserved (None)                                              (bit 5)
+       Reserved (None)                                              (bit 6)
+       Reserved (None)                                              (bit 7)
+       Channel Not Monitoring                                       (bit 8)
+       KPH Not OK                                                   (bit 9)
+       Signal Path Not OK                                           (bit 10)
+       Reserved (None)                                              (bit 11)
+       Reserved (None)                                              (bit 12)
+       Reserved (None)                                              (bit 13)
+       Reserved (None)                                              (bit 14)
+       Reserved (None)                                              (bit 15)
+  
+Slot 4 (3500/25)(Lower Slot) -- Channel Status:
+    Channel 2:                                                      46146
+       Channel Not OK                                               (bit 0)
+       Reserved (None)                                              (bit 1)
+       Reserved (None)                                              (bit 2)
+       Channel in Bypass Mode                                       (bit 3)
+       Channel Off                                                  (bit 4)
+       Reserved (None)                                              (bit 5)
+       Reserved (None)                                              (bit 6)
+       Reserved (None)                                              (bit 7)
+       Channel Not Monitoring                                       (bit 8)
+       KPH Not OK                                                   (bit 9)
+       Signal Path Not OK                                           (bit 10)
+       Reserved (None)                                              (bit 11)
+       Reserved (None)                                              (bit 12)
+       Reserved (None)                                              (bit 13)
+       Reserved (None)                                              (bit 14)
+       Reserved (None)                                              (bit 15)
+  
 Slot 6 (3500/42) -- Channel Status:
-    Channel 1: Gearbox Extension En: Acceleration                   46086
+    Channel 1: GB Ext End Vel: Acceleration 2                       46147
        Channel Not OK                                               (bit 0)
        Channel Alert/Alarm 1                                        (bit 1)
        Channel Danger/Alarm 2                                       (bit 2)
@@ -1408,7 +1777,7 @@ Slot 6 (3500/42) -- Channel Status:
        Reserved (None)                                              (bit 15)
   
 Slot 6 (3500/42) -- Channel Status:
-    Channel 2: Gearbox Blind End: Acceleration                      46087
+    Channel 2: GB Ext End Acc: Acceleration 2                       46148
        Channel Not OK                                               (bit 0)
        Channel Alert/Alarm 1                                        (bit 1)
        Channel Danger/Alarm 2                                       (bit 2)
@@ -1426,16 +1795,194 @@ Slot 6 (3500/42) -- Channel Status:
        Reserved (None)                                              (bit 14)
        Reserved (None)                                              (bit 15)
   
-Slot 6 (3500/42) -- Channel 1: Gearbox Extension En: Acceleration
-       Current Proportional Values: Direct                          46088
-Slot 6 (3500/42) -- Channel 2: Gearbox Blind End   : Acceleration
-       Current Proportional Values: Direct                          46090
-Slot 6 (3500/42) -- Channel 1: Gearbox Extension En: Acceleration
-       Setpoints -- Alert Over Direct                                46092
-Slot 6 (3500/42) -- Channel 1: Gearbox Extension En: Acceleration
-       Setpoints -- Danger Over Direct                               46094
-Slot 6 (3500/42) -- Channel 2: Gearbox Blind End   : Acceleration
-       Setpoints -- Alert Over Direct                                46096
-Slot 6 (3500/42) -- Channel 2: Gearbox Blind End   : Acceleration
-       Setpoints -- Danger Over Direct                               46098
+Slot 6 (3500/42) -- Channel Status:
+    Channel 3: GB Bl End Vel: Acceleration 2                        46149
+       Channel Not OK                                               (bit 0)
+       Channel Alert/Alarm 1                                        (bit 1)
+       Channel Danger/Alarm 2                                       (bit 2)
+       Channel in Bypass Mode                                       (bit 3)
+       Channel Off                                                  (bit 4)
+       Channel Trip Multiply Mode                                   (bit 5)
+       Channel Special Alarm Inhibit                                (bit 6)
+       Reserved (None)                                              (bit 7)
+       Channel Not Monitoring                                       (bit 8)
+       KPH Not OK                                                   (bit 9)
+       Signal Path Not OK                                           (bit 10)
+       Reserved (None)                                              (bit 11)
+       Reserved (None)                                              (bit 12)
+       Reserved (None)                                              (bit 13)
+       Reserved (None)                                              (bit 14)
+       Reserved (None)                                              (bit 15)
+  
+Slot 6 (3500/42) -- Channel Status:
+    Channel 4: GB Bl End Acc: Acceleration 2                        46150
+       Channel Not OK                                               (bit 0)
+       Channel Alert/Alarm 1                                        (bit 1)
+       Channel Danger/Alarm 2                                       (bit 2)
+       Channel in Bypass Mode                                       (bit 3)
+       Channel Off                                                  (bit 4)
+       Channel Trip Multiply Mode                                   (bit 5)
+       Channel Special Alarm Inhibit                                (bit 6)
+       Reserved (None)                                              (bit 7)
+       Channel Not Monitoring                                       (bit 8)
+       KPH Not OK                                                   (bit 9)
+       Signal Path Not OK                                           (bit 10)
+       Reserved (None)                                              (bit 11)
+       Reserved (None)                                              (bit 12)
+       Reserved (None)                                              (bit 13)
+       Reserved (None)                                              (bit 14)
+       Reserved (None)                                              (bit 15)
+  
+Slot 7 (3500/32) -- Channel Status:
+    Channel 1:                                                      46151
+       Channel Not OK                                               (bit 0)
+       Relay Channel Active                                         (bit 1)
+       Reserved (None)                                              (bit 2)
+       Channel in Bypass Mode                                       (bit 3)
+       Channel Off                                                  (bit 4)
+       Reserved (None)                                              (bit 5)
+       Reserved (None)                                              (bit 6)
+       Reserved (None)                                              (bit 7)
+       Channel Not Monitoring                                       (bit 8)
+       KPH Not OK                                                   (bit 9)
+       Signal Path Not OK                                           (bit 10)
+       Reserved (None)                                              (bit 11)
+       Reserved (None)                                              (bit 12)
+       Reserved (None)                                              (bit 13)
+       Reserved (None)                                              (bit 14)
+       Reserved (None)                                              (bit 15)
+  
+Slot 7 (3500/32) -- Channel Status:
+    Channel 2:                                                      46152
+       Channel Not OK                                               (bit 0)
+       Relay Channel Active                                         (bit 1)
+       Reserved (None)                                              (bit 2)
+       Channel in Bypass Mode                                       (bit 3)
+       Channel Off                                                  (bit 4)
+       Reserved (None)                                              (bit 5)
+       Reserved (None)                                              (bit 6)
+       Reserved (None)                                              (bit 7)
+       Channel Not Monitoring                                       (bit 8)
+       KPH Not OK                                                   (bit 9)
+       Signal Path Not OK                                           (bit 10)
+       Reserved (None)                                              (bit 11)
+       Reserved (None)                                              (bit 12)
+       Reserved (None)                                              (bit 13)
+       Reserved (None)                                              (bit 14)
+       Reserved (None)                                              (bit 15)
+  
+Slot 9 (3500/50) -- Channel Status:
+    Channel 1: Gen DE Keyphasor: Rotor Speed                        46153
+       Channel Not OK                                               (bit 0)
+       Channel Alert/Alarm 1                                        (bit 1)
+       Channel Danger/Alarm 2                                       (bit 2)
+       Channel in Bypass Mode                                       (bit 3)
+       Channel Off                                                  (bit 4)
+       Reserved (None)                                              (bit 5)
+       Reserved (None)                                              (bit 6)
+       Reserved (None)                                              (bit 7)
+       Channel Not Monitoring                                       (bit 8)
+       KPH Not OK                                                   (bit 9)
+       Signal Path Not OK                                           (bit 10)
+       Reserved (None)                                              (bit 11)
+       Zero Speed Enabled/Disabled                                  (bit 12)
+       Reserved (None)                                              (bit 13)
+       Reserved (None)                                              (bit 14)
+       Reserved (None)                                              (bit 15)
+  
+Slot 9 (3500/50) -- Channel Status:
+    Channel 2: : Rotor Speed                                        46154
+       Channel Not OK                                               (bit 0)
+       Channel Alert/Alarm 1                                        (bit 1)
+       Channel Danger/Alarm 2                                       (bit 2)
+       Channel in Bypass Mode                                       (bit 3)
+       Channel Off                                                  (bit 4)
+       Reserved (None)                                              (bit 5)
+       Reserved (None)                                              (bit 6)
+       Reserved (None)                                              (bit 7)
+       Channel Not Monitoring                                       (bit 8)
+       KPH Not OK                                                   (bit 9)
+       Signal Path Not OK                                           (bit 10)
+       Reserved (None)                                              (bit 11)
+       Zero Speed Enabled/Disabled                                  (bit 12)
+       Reserved (None)                                              (bit 13)
+       Reserved (None)                                              (bit 14)
+       Reserved (None)                                              (bit 15)
+  
+Slot 10 (3500/42) -- Channel Status:
+    Channel 1: CRF Vib Acceleration: Acceleration                   46155
+       Channel Not OK                                               (bit 0)
+       Channel Alert/Alarm 1                                        (bit 1)
+       Channel Danger/Alarm 2                                       (bit 2)
+       Channel in Bypass Mode                                       (bit 3)
+       Channel Off                                                  (bit 4)
+       Channel Trip Multiply Mode                                   (bit 5)
+       Channel Special Alarm Inhibit                                (bit 6)
+       Reserved (None)                                              (bit 7)
+       Channel Not Monitoring                                       (bit 8)
+       KPH Not OK                                                   (bit 9)
+       Signal Path Not OK                                           (bit 10)
+       Reserved (None)                                              (bit 11)
+       Reserved (None)                                              (bit 12)
+       Reserved (None)                                              (bit 13)
+       Reserved (None)                                              (bit 14)
+       Reserved (None)                                              (bit 15)
+  
+Slot 10 (3500/42) -- Channel Status:
+    Channel 2: TRF Vib Acceleration: Acceleration                   46156
+       Channel Not OK                                               (bit 0)
+       Channel Alert/Alarm 1                                        (bit 1)
+       Channel Danger/Alarm 2                                       (bit 2)
+       Channel in Bypass Mode                                       (bit 3)
+       Channel Off                                                  (bit 4)
+       Channel Trip Multiply Mode                                   (bit 5)
+       Channel Special Alarm Inhibit                                (bit 6)
+       Reserved (None)                                              (bit 7)
+       Channel Not Monitoring                                       (bit 8)
+       KPH Not OK                                                   (bit 9)
+       Signal Path Not OK                                           (bit 10)
+       Reserved (None)                                              (bit 11)
+       Reserved (None)                                              (bit 12)
+       Reserved (None)                                              (bit 13)
+       Reserved (None)                                              (bit 14)
+       Reserved (None)                                              (bit 15)
+  
+Slot 10 (3500/42) -- Channel Status:
+    Channel 3: : Acceleration                                       46157
+       Channel Not OK                                               (bit 0)
+       Channel Alert/Alarm 1                                        (bit 1)
+       Channel Danger/Alarm 2                                       (bit 2)
+       Channel in Bypass Mode                                       (bit 3)
+       Channel Off                                                  (bit 4)
+       Channel Trip Multiply Mode                                   (bit 5)
+       Channel Special Alarm Inhibit                                (bit 6)
+       Reserved (None)                                              (bit 7)
+       Channel Not Monitoring                                       (bit 8)
+       KPH Not OK                                                   (bit 9)
+       Signal Path Not OK                                           (bit 10)
+       Reserved (None)                                              (bit 11)
+       Reserved (None)                                              (bit 12)
+       Reserved (None)                                              (bit 13)
+       Reserved (None)                                              (bit 14)
+       Reserved (None)                                              (bit 15)
+  
+Slot 10 (3500/42) -- Channel Status:
+    Channel 4: : Acceleration                                       46158
+       Channel Not OK                                               (bit 0)
+       Channel Alert/Alarm 1                                        (bit 1)
+       Channel Danger/Alarm 2                                       (bit 2)
+       Channel in Bypass Mode                                       (bit 3)
+       Channel Off                                                  (bit 4)
+       Channel Trip Multiply Mode                                   (bit 5)
+       Channel Special Alarm Inhibit                                (bit 6)
+       Reserved (None)                                              (bit 7)
+       Channel Not Monitoring                                       (bit 8)
+       KPH Not OK                                                   (bit 9)
+       Signal Path Not OK                                           (bit 10)
+       Reserved (None)                                              (bit 11)
+       Reserved (None)                                              (bit 12)
+       Reserved (None)                                              (bit 13)
+       Reserved (None)                                              (bit 14)
+       Reserved (None)                                              (bit 15)
+  
 
